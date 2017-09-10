@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.bucketlist.completedList"
+    android:id="@+id/activity_completed_list"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/Given"
+
+        >
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+
+            />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_completed_list" />
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/Given"
+        android:id="@+id/rvItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="96dp"
+        app:layoutManager="LinearLayoutManager"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addActivity"
+        android:layout_alignParentBottom="true"
+        android:background="#A5D6A7"
+        android:text="Add Activity"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:onClick="addActivity"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SearchButton"
+        android:layout_above="@id/addActivity"
+        android:layout_alignParentRight="true"
+        android:background="#FFF59D"
+        android:text="Filter"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:onClick="searchList"
+        tools:ignore="HardcodedText" />
+
+
+
+</RelativeLayout>

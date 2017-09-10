@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.bucketlist.futureList">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_future_list"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:fontFamily="serif-monospace"
+        android:inputType="textPersonName"
+        android:text="Activity Name"
+        android:textAlignment="center"
+        android:textColor="#01579B"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/CostText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinner"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_toLeftOf="@+id/editText"
+        android:layout_toStartOf="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        android:fontFamily="serif-monospace"
+        android:text="Cost: "
+        android:textColor="#01579B"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/spinner"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_below="@+id/Cost"
+        android:paddingTop="16dp"
+        />
+
+    <EditText
+        android:id="@+id/Cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/spinner"
+        android:layout_alignBottom="@+id/spinner"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:ems="3"
+        android:fontFamily="serif-monospace"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#01579B" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/duration_array"
+        android:prompt="@string/duration_prompt"
+        android:layout_gravity="end"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignRight="@+id/fab"
+        android:layout_alignEnd="@+id/fab"
+        android:fontFamily="serif-monospace"
+
+        />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="serif-monospace"
+        android:text="Write a description here."
+        android:textAlignment="center"
+        android:textColor="#01579B"
+        android:layout_above="@+id/fab"
+        android:layout_alignLeft="@+id/Cost"
+        android:layout_alignStart="@+id/Cost"
+        android:nextFocusUp="@id/editText3"
+        android:nextFocusLeft="@id/editText3"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:id="@+id/TagsText"
+        android:textColor="#01579B"
+        android:text="Choose tags to match your activity:"
+        android:layout_below="@id/ratingBar"
+        android:paddingTop="16dp"
+        android:layout_alignLeft="@id/CostText"
+        android:layout_alignStart="@id/CostText"
+        tools:ignore="HardcodedText" />
+
+    <CheckBox
+        android:id="@+id/checkBox0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Personal Growth"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:layout_alignBaseline="@+id/checkBox1"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_alignLeft="@id/CostText"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:text="Food/Drink "
+        android:layout_alignBaseline="@+id/checkBox2"
+        android:layout_alignBottom="@+id/checkBox2"
+        android:layout_toEndOf="@+id/Cost"
+        android:layout_toRightOf="@id/Cost"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:layout_below="@+id/TagsText"
+        android:layout_alignLeft="@+id/checkBox5"
+        android:layout_alignStart="@+id/checkBox5" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox3"
+        android:paddingTop="8dp"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:text="Entertainment"
+        android:fontFamily="serif-monospace"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/checkBox0"
+        android:layout_alignLeft="@id/CostText"
+         />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox6"
+        android:paddingTop="8dp"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:text="Relationship"
+        android:fontFamily="serif-monospace"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignLeft="@id/CostText"
+         />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox9"
+        android:paddingTop="8dp"
+        android:text="Health/Fitness"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/checkBox6"
+       android:layout_alignLeft="@id/CostText"
+
+        />
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBox3"
+        android:layout_toEndOf="@+id/Cost"
+        android:layout_toRightOf="@+id/Cost"
+        android:fontFamily="serif-monospace"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:text="Events" />
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBox6"
+        android:layout_toEndOf="@+id/Cost"
+        android:layout_toRightOf="@+id/Cost"
+        android:fontFamily="serif-monospace"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:text="Family" />
+    <CheckBox
+        android:id="@+id/checkBox10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBox9"
+        android:layout_toEndOf="@+id/Cost"
+        android:layout_toRightOf="@+id/Cost"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:text="Creative" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Career"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:layout_below="@+id/checkBox1"
+        android:layout_alignLeft="@+id/checkBox8"
+        android:layout_alignStart="@+id/checkBox8" />
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Charity"
+        android:layout_alignBaseline="@+id/checkBox7"
+        android:layout_alignBottom="@+id/checkBox7"
+        android:layout_alignRight="@+id/spinner"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:layout_alignEnd="@+id/spinner" />
+    <CheckBox
+        android:id="@+id/checkBox11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sports"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:fontFamily="serif-monospace"
+        android:layout_below="@+id/checkBox8"
+        android:layout_alignLeft="@+id/checkBox8"
+        android:layout_alignStart="@+id/checkBox8" />
+
+
+
+    <TextView
+        android:id="@+id/Priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="Priority: "
+        android:fontFamily="serif-monospace"
+        android:textColor="#01579B"
+        android:textSize="18dp"
+        android:layout_above="@+id/TagsText"
+        android:layout_alignLeft="@+id/TagsText"
+        android:layout_alignStart="@+id/TagsText" />
+
+
+</RelativeLayout>

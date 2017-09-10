@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BucketList</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="START">DUMMY\nCONTENT</string>
+    <string name="title_activity_future_list">Add an Adventure</string>
+    <string name="title_activity_completed_list">Search your Adventures</string>
+    <string name="duration_prompt">Choose a duration</string>
+
+    <string-array name="duration_array">
+        <item>Choose a duration</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+        <item>Years</item>
+
+    </string-array>
+
+
+</resources>

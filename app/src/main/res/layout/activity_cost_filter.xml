@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.bucketlist.CostFilter">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/costSearch"
+        android:inputType="number"
+        android:layout_centerInParent="true"
+        android:ems="4"
+        android:textColor="#01579B"
+        android:nextFocusUp="@id/costSearch"
+        android:nextFocusLeft="@id/costSearch"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/costSearch"
+        android:layout_alignBaseline="@id/costSearch"
+        android:paddingRight="2dp"
+        android:text="$"
+        android:textSize="16sp"
+        android:textColor="#01579B"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/costSearch"
+        android:paddingTop="8dp"
+        android:id="@+id/costChecks"
+        android:layout_centerHorizontal="true"
+        >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lThan"
+                android:text="Less than"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eTo"
+                android:text="Equal to"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gThan"
+                android:text="Greater than"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchCosText"
+        android:layout_above="@id/costChecks"
+        android:text="Filter by cost: "
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textColor="#01579B"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingBottom="8dp"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF176"
+        android:text="Search"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:onClick="onSearchCost"
+        tools:ignore="HardcodedText" />
+
+
+</RelativeLayout>

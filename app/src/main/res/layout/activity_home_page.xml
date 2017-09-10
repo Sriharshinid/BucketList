@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context="com.example.android.bucketlist.HomePage">
+
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/background_dark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/currentImg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight = "1"
+            android:layout_margin="0dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:padding="0dp"
+            android:src="@drawable/current" />
+
+
+
+
+
+        <ImageView
+            android:id="@+id/completedImg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight = "1"
+            android:layout_below="@+id/currentImg"
+            android:layout_marginTop="0dp"
+            android:padding="0dp"
+            android:src="@drawable/completed" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="cursive"
+            android:onClick="futureScreen"
+            android:text="Add Adventures"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="cursive"
+            android:onClick="completedScreen"
+            android:text="Search Adventures"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+    </LinearLayout>
+
+</RelativeLayout>
