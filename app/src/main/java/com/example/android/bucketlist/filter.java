@@ -38,7 +38,8 @@ public class filter extends AppCompatActivity {
     }
 
     public void priorityFilter(View view){
-
+        Intent intent = new Intent(this, PriorityFilter.class);
+        startActivity(intent);
     }
 
     public void tagsFilter(View view){

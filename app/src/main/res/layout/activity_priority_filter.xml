@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.bucketlist.PriorityFilter">
+
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priorityRate"
+        android:layout_centerInParent="true"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priorityChecks"
+        android:orientation="horizontal"
+        android:layout_above="@id/priorityRate"
+        android:paddingTop="8dp"
+        android:layout_centerHorizontal="true"
+        >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/LThan"
+                android:text="Less than"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ETo"
+                android:text="Equal to"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/GThan"
+                android:text="Greater than"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchPriorityText"
+        android:layout_above="@id/priorityChecks"
+        android:text="Filter by priority: "
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textColor="#01579B"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingBottom="8dp"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF176"
+        android:text="Search"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:onClick="onSearchPriority"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

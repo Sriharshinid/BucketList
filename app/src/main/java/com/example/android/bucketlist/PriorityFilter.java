@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -14,55 +13,43 @@ import com.example.android.bucketlist.model.DataItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CostFilter extends AppCompatActivity {
+public class PriorityFilter extends AppCompatActivity {
 
     DataSource ds;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cost_filter);
+        setContentView(R.layout.activity_priority_filter);
         ds = new DataSource(this);
     }
 
+    public void onSearchPriority(View view){
+        boolean searchable = true;
+        RadioButton Lthan = (RadioButton) findViewById(R.id.LThan);
+        RadioButton eTo = (RadioButton) findViewById(R.id.ETo);
+        RadioButton Gthan = (RadioButton) findViewById(R.id.GThan);
 
-
-    public void onSearchCost(View view){
-        boolean searchable = false;
-
-
-        RadioButton Lthan = (RadioButton) findViewById(R.id.lThan);
-        RadioButton eTo = (RadioButton) findViewById(R.id.eTo);
-        RadioButton Gthan = (RadioButton) findViewById(R.id.gThan);
-        EditText cFilter = (EditText) findViewById(R.id.costSearch);
-        int searchValue= -1;
-        if(cFilter.getText().toString().equals("")) {
-            Toast.makeText(this, "A numeric value must be entered", Toast.LENGTH_SHORT).show();
-        }else{
-            searchable =true;
-            searchValue = Integer.parseInt(cFilter.getText().toString());
-        }
-
+        double searchValue = 0.0;
         List<DataItem> queriedList = new ArrayList<>();
 
         List<DataItem> allItems = ds.getAllItems();
 
         if(Lthan.isChecked()){
-                for (DataItem item:allItems) {
-                    if(item.getCost()  != -1 && item.getCost() < searchValue ){
-                        queriedList.add(item);
-                    }
+            for (DataItem item:allItems) {
+                if(item.getPriority() < searchValue ){
+                    queriedList.add(item);
                 }
+            }
         }else if(eTo.isChecked()){
             for (DataItem item:allItems) {
-                if(item.getCost()  != -1 && item.getCost() == searchValue ){
+                if(item.getPriority() == searchValue ){
                     queriedList.add(item);
                 }
             }
 
         }else if(Gthan.isChecked()){
             for (DataItem item:allItems) {
-                if(item.getCost()  != -1 && item.getCost() > searchValue ){
+                if(item.getPriority() > searchValue ){
                     queriedList.add(item);
                 }
             }
@@ -78,7 +65,10 @@ public class CostFilter extends AppCompatActivity {
             intent.putExtra("list", (ArrayList<DataItem>) queriedList);
             startActivity(intent);
         }
+
     }
+
+
+
+
 }
-
-

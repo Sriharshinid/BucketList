@@ -43,7 +43,8 @@
         </activity>
         <activity android:name=".filter" />
         <activity android:name=".NameFilter" />
-        <activity android:name=".CostFilter"></activity>
+        <activity android:name=".CostFilter" />
+        <activity android:name=".PriorityFilter"></activity>
     </application>
 
 </manifest>
