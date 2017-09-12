@@ -44,7 +44,9 @@
         <activity android:name=".filter" />
         <activity android:name=".NameFilter" />
         <activity android:name=".CostFilter" />
-        <activity android:name=".PriorityFilter"></activity>
+        <activity android:name=".PriorityFilter" />
+        <activity android:name=".TimeFilter" />
+        <activity android:name=".TagsFilter"></activity>
     </application>
 
 </manifest>

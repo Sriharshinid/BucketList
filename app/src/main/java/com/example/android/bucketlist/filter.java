@@ -34,7 +34,8 @@ public class filter extends AppCompatActivity {
     }
 
     public void timeFilter(View view){
-
+        Intent intent = new Intent(this, TimeFilter.class);
+        startActivity(intent);
     }
 
     public void priorityFilter(View view){
@@ -43,6 +44,8 @@ public class filter extends AppCompatActivity {
     }
 
     public void tagsFilter(View view){
+        Intent intent = new Intent(this, TagsFilter.class);
+        startActivity(intent);
 
     }
 
